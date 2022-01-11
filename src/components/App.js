@@ -1,10 +1,10 @@
 import React from "react";
 import Header from "./Header";
-import EventList from "./EventList";
+import SynchronicityList from "./SynchronicityList";
 function App() {
   <React.Fragment>
     <Header />
-    <EventList />
+    <SynchronicityList />
   </React.Fragment>
 }
 
