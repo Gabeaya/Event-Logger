@@ -27,6 +27,12 @@ class ToggleControl extends React.Component {
       formVisibleOnPage: false
     });
   }
+
+  handleChangingSelectedSynchronicity = (id) => {
+    const selectedSynchronicity = this.state.mainSynchronicityList.filter(synchronicity => synchronicity.id === id)[0];
+    this.setState({selectedSynchronicity: selectedSynchronicity});
+  }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
