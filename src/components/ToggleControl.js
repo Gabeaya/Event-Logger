@@ -18,6 +18,11 @@ class ToggleControl extends React.Component {
       formVisibleOnPage: !prevState.formVisibleOnPage
     }));
   }
+
+  handleAddingSynchronicityToList = (newSynchronicity) => {
+    const newMainSynchronicityList = this.state.mainSynchronicityList.concat(newSynchronicity);
+    this.setState({mainSynchronicityList: newMainSynchronicityList, formVisibleOnPage: false});
+  }
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
