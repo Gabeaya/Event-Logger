@@ -1,12 +1,11 @@
 import React from "react";
 import { v4 } from 'uuid';
+import PropTypes from "prop-types";
+
 function Form(props){
   function handleFormSubmission(event) {
     event.preventDefault();
-    console.log(event.target.title.value);
-    console.log(event.target.date.value);
-    console.log(event.target.occurence.value);
-    console.log(event.target.interpretation.value)
+    props.onFormCreation({title: event.target.title.value, date: event.target.date.value, occurence: event.target.occurence.value, interpretation: event.target.interpretation.value, id:v4()});
   }
   return (
     <React.Fragment>
@@ -30,5 +29,9 @@ function Form(props){
     </React.Fragment>
   );
 }
+
+Form.propTypes = {
+  onFormCreation: PropTypes.func
+};
 
 export default Form;
