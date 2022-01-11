@@ -1,14 +1,14 @@
 import React from "react";
 import Synchronicity from "./Synchronicity";
+import PropTypes from "prop-types";
 
 
-
-function SynchronicityList(){
+function SynchronicityList(props){
   return (
     
     <React.Fragment>
       <hr />
-      {mainSynchronicityList.map((synchronicity, index) => 
+      {props.mainSynchronicityList.map((synchronicity, index) => 
         <Synchronicity title={synchronicity.title}
         date={synchronicity.date}
         occurence={synchronicity.occurence}
@@ -18,5 +18,9 @@ function SynchronicityList(){
     </React.Fragment>
   );
 }
+
+SynchronicityList.propTypes = {
+  synchronicityList: PropTypes.array
+};
 
 export default SynchronicityList;
