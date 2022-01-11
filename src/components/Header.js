@@ -1,5 +1,5 @@
 import React from "react";
-import syncImage from "./../img/synchronicity.jpg";
+import syncImage from "./../img/synchronicities.jpg";
 function Header(){
   return (
     <React.Fragment>
