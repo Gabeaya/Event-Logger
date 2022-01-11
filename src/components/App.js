@@ -1,11 +1,11 @@
 import React from "react";
 import Header from "./Header";
-import SynchronicityList from "./SynchronicityList";
+import ToggleControl from "./ToggleControl";
 function App() {
   return (
     <React.Fragment>
     <Header />
-    <SynchronicityList />
+    <ToggleControl />
   </React.Fragment>
   );
   
