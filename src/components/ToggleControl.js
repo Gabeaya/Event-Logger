@@ -7,8 +7,8 @@ class ToggleControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false,
-      mainSynchronicityList: []
+      mainSynchronicityList: newMainSynchronicityList,
+      formVisibleOnPage: false
     };
 
   }
@@ -27,7 +27,7 @@ class ToggleControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <Form />;
+      currentlyVisibleState = <Form onFormCreation={this.handleAddingSynchronicityToList} />;
       buttonText = "Return To List";
     }else {
       currentlyVisibleState = <SynchronicityList synchronicityList={this.state.mainSynchronicityList}/>;
