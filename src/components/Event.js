@@ -12,9 +12,9 @@ function Event(props){
   );
 }
 Event.propTypes = {
-  title: PropTypes.string,
-  date: PropTypes.string,
-  synchronicity: PropTypes.string,
-  interpretation: PropTypes.string
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.instanceOf(Date),
+  synchronicity: PropTypes.string.isRequired,
+  interpretation: PropTypes.string.isRequired
 }
 export default Event;
