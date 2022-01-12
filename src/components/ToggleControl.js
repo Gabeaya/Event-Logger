@@ -1,7 +1,7 @@
 import React from 'react';
 import Form from './Form';
 import SynchronicityList from './SynchronicityList';
-
+import Detail from './Detail';
 class ToggleControl extends React.Component {
 
   constructor(props) {
