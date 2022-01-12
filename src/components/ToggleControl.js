@@ -72,7 +72,7 @@ class ToggleControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.editing ) {
-      currentlyVisibleState = <EditForm synchronicity = {this.state.selectedSynchronicity} />
+      currentlyVisibleState = <EditForm synchronicity = {this.state.selectedSynchronicity} onEditTicket = {this.handleEditingInList} />
       buttonText= "return to list";
     } else if (this.state.selectedSynchronicity != null) {
       currentlyVisibleState = <Detail synchronicity = {this.state.selectedSynchronicity} onClickingDelete = {this.handleDeletingSynchronicity} onClickingEdit = {this.handleEditClick} />
