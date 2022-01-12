@@ -17,10 +17,6 @@ class ToggleControl extends React.Component {
     };
 
   }
-  handeEditClick = () => {
-    console.log("handleEditClickReach!");
-    this.setState({editing:true});
-  }
 
   handleClick = () => {
     if (this.state.selectedSynchronicity != null) {
@@ -54,6 +50,23 @@ class ToggleControl extends React.Component {
       mainSynchronicityList: newMainSynchronicityList,
       selectedSynchronicity: null
     });
+  }
+
+  handeEditClick = () => {
+    console.log("handleEditClickReach!");
+    this.setState({editing:true});
+  }
+
+  handleEditingInList = (synchronicityToEdit) => {
+    const editedMainList = this.state.mainSynchronicityList
+      .filter(synchronicity => synchronicity.id !== this.state.selectedSynchronicity)
+      .concat(synchronicityToEdit);
+    this.setState({
+      mainSynchronicityList: editedMainList,
+      editing: false,
+      selectedSynchronicity: null
+    });
+    
   }
   render(){
     let currentlyVisibleState = null;
