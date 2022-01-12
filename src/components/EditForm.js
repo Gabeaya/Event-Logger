@@ -1,5 +1,6 @@
 import React from "react";
 import ReusableForm from "./ReusableForm";
+import PropTypes from "prop-types";
 
 function EditForm (props) {
   return (
@@ -9,5 +10,8 @@ function EditForm (props) {
     </React.Fragment>
   );
 }
-
+EditForm.propTypes = {
+  synchronicity: Proptypes.object,
+  onEditTicket: PropTypes.func
+}
 export default EditForm;
