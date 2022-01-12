@@ -5,10 +5,9 @@ import PropTypes from "prop-types";
 
 function SynchronicityList(props){
   return (
-    
     <React.Fragment>
       <hr />
-      {props.mainSynchronicityList.map((synchronicity) => 
+      {props.synchronicityList.map((synchronicity) => 
         <Synchronicity 
         whenSynchronicityClicked = { props.onSynchronicitySelection}
         title={synchronicity.title}
