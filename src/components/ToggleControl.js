@@ -36,11 +36,14 @@ class ToggleControl extends React.Component {
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
-    if (this.state.formVisibleOnPage) {
+    if (this.state.selectedSynchronicity != null) {
+      currentlyVisibleState = <Detail synchronicity = {this.state.selectedSynchronicity} />
+      buttonText = "Return to list";
+    } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <Form onFormCreation={this.handleAddingSynchronicityToList} />;
       buttonText = "Return To List";
     }else {
-      currentlyVisibleState = <SynchronicityList synchronicityList={this.state.mainSynchronicityList}/>;
+      currentlyVisibleState = <SynchronicityList synchronicityList={this.state.mainSynchronicityList} onSynchronicitySelection={this.handleChangingSelectedSynchronicity} />;
       buttonText = "Add Another";
     }
     return (
