@@ -9,7 +9,8 @@ class ToggleControl extends React.Component {
     this.state = {
       mainSynchronicityList: [],
       formVisibleOnPage: false,
-      selectedSynchronicity: null
+      selectedSynchronicity: null,
+      editing: false
     };
 
   }
