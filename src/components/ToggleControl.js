@@ -18,7 +18,7 @@ class ToggleControl extends React.Component {
     console.log("handleEditClickReach!");
     this.setState({editing:true});
   }
-  
+
   handleClick = () => {
     if (this.state.selectedSynchronicity != null) {
       this.setState({
@@ -56,7 +56,7 @@ class ToggleControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.selectedSynchronicity != null) {
-      currentlyVisibleState = <Detail synchronicity = {this.state.selectedSynchronicity} onClickingDelete = {this.handleDeletingSynchronicity} />
+      currentlyVisibleState = <Detail synchronicity = {this.state.selectedSynchronicity} onClickingDelete = {this.handleDeletingSynchronicity} onClickingEdit = {this.handleEditClick} />
       buttonText = "Return to list";
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <Form onFormCreation={this.handleAddingSynchronicityToList} />;
