@@ -8,19 +8,23 @@ function SynchronicityList(props){
     
     <React.Fragment>
       <hr />
-      {props.mainSynchronicityList.map((synchronicity, index) => 
-        <Synchronicity title={synchronicity.title}
+      {props.mainSynchronicityList.map((synchronicity) => 
+        <Synchronicity 
+        whenSynchronicityClicked = { props.onSynchronicitySelection}
+        title={synchronicity.title}
         date={synchronicity.date}
         occurence={synchronicity.occurence}
         interpretation={synchronicity.interpretation}
-        key={index}/>
+        id={synchronicity.id}
+        key={synchronicity.id}/>
       )}
     </React.Fragment>
   );
 }
 
 SynchronicityList.propTypes = {
-  synchronicityList: PropTypes.array
+  synchronicityList: PropTypes.array,
+  onSynchronicitySelection: PropTypes.func
 };
 
 export default SynchronicityList;
