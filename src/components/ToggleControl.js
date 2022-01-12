@@ -15,9 +15,16 @@ class ToggleControl extends React.Component {
   }
 
   handleClick = () => {
-    this.setState(prevState => ({
-      formVisibleOnPage: !prevState.formVisibleOnPage
-    }));
+    if (this.state.selectedSynchronicity != null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectedSynchronicity: null
+      });
+    } else {
+      this.setState(prevState => ({
+        formVisibleOnPage: !prevState.formVisibleOnPage
+      }));
+    }
   }
 
   handleAddingSynchronicityToList = (newSynchronicity) => {
