@@ -2,6 +2,9 @@ import React from 'react';
 import Form from './Form';
 import SynchronicityList from './SynchronicityList';
 import Detail from './Detail';
+import EditForm from '.EditForm';
+
+
 class ToggleControl extends React.Component {
 
   constructor(props) {
@@ -55,7 +58,10 @@ class ToggleControl extends React.Component {
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
-    if (this.state.selectedSynchronicity != null) {
+    if (this.state.editing ) {
+      currentlyVisibleState = <EditForm synchronicity = {this.state.selectedSynchronicity} />
+      buttonText= "return to list";
+    } else if (this.state.selectedSynchronicity != null) {
       currentlyVisibleState = <Detail synchronicity = {this.state.selectedSynchronicity} onClickingDelete = {this.handleDeletingSynchronicity} onClickingEdit = {this.handleEditClick} />
       buttonText = "Return to list";
     } else if (this.state.formVisibleOnPage) {
