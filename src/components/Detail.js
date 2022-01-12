@@ -11,12 +11,14 @@ function Detail(props){
       <p>What happened: {synchronicity.occurance}</p>
       <p>Interpretation: {synchronicity.interpretation}</p>
       <button onClick={() => onClickingDelete(ticket.id)}>Close Event</button>
+      <button onClickl={ props.onClickingEdit }>Update ticket</button>
       <hr/>
     </React.Fragment>
   );
 }
 Detail.propTypes = {
   synchronicity: PropTypes.object,
-  onClickingDelete: PropTypes.func
+  onClickingDelete: PropTypes.func,
+  onClickingEdit: PropTypes.func
 };
 export default Detail;
