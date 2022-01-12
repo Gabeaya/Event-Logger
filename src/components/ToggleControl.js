@@ -40,6 +40,13 @@ class ToggleControl extends React.Component {
     this.setState({selectedSynchronicity: selectedSynchronicity});
   }
 
+  handleDeletingSynchronicity = (id) => {
+    const newMainSynchronicityList = this.state.mainSynchronicityList.filter(synchronicity => synchronicity.id !== id);
+    this.setState({
+      mainSynchronicityList: newMainSynchronicityList,
+      selectedSynchronicity: null
+    });
+  }
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
