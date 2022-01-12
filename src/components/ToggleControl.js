@@ -22,7 +22,8 @@ class ToggleControl extends React.Component {
     if (this.state.selectedSynchronicity != null) {
       this.setState({
         formVisibleOnPage: false,
-        selectedSynchronicity: null
+        selectedSynchronicity: null,
+        editing: false
       });
     } else {
       this.setState(prevState => ({
