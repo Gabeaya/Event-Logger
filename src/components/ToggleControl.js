@@ -14,7 +14,11 @@ class ToggleControl extends React.Component {
     };
 
   }
-
+  handeEditClick = () => {
+    console.log("handleEditClickReach!");
+    this.setState({editing:true});
+  }
+  
   handleClick = () => {
     if (this.state.selectedSynchronicity != null) {
       this.setState({
