@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Detail(props){
-  const { synchronicity, onClickingDelete } = props;
+  const { synchronicity, onClickingDelete, onClickingIncrement } = props;
 
   return (
     <React.Fragment>
@@ -14,6 +14,7 @@ function Detail(props){
 
       <button onClick={() => onClickingDelete(synchronicity.id)}>Close Event</button>
       <button onClick={ props.onClickingEdit}>Update </button>
+      <button onClick={() => onClickingIncrement(synchronicity.id)}>Happened Again</button>
       <hr/>
     </React.Fragment>
   );
@@ -21,6 +22,7 @@ function Detail(props){
 Detail.propTypes = {
   synchronicity: PropTypes.object,
   onClickingDelete: PropTypes.func,
-  onClickingEdit: PropTypes.func
+  onClickingEdit: PropTypes.func,
+  onClickingIncrement: PropTypes.func
 };
 export default Detail;
