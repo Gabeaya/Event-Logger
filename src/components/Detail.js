@@ -8,10 +8,10 @@ function Detail(props){
     <React.Fragment>
       <h1>Detail</h1>
       <h3>{synchronicity.title} on {synchronicity.date}</h3>
-      <p>What happened: {synchronicity.occurance}</p>
+      <p>What happened: {synchronicity.occurence}</p>
       <p>Interpretation: {synchronicity.interpretation}</p>
-      <button onClick={() => onClickingDelete(ticket.id)}>Close Event</button>
-      <button onClickl={ props.onClickingEdit }>Update ticket</button>
+      <button onClick={() => onClickingDelete(synchronicity.id)}>Close Event</button>
+      <button onClick={ props.onClickingEdit}>Update </button>
       <hr/>
     </React.Fragment>
   );
