@@ -7,7 +7,7 @@ function EditForm (props) {
 
   function handleEditFormSubmission(event) {
     event.preventDefault();
-    props.onEditSynchronicity({title: event.target.title.value, date: event.target.date.value, occurence: event.target.occurence.value, interpretation: event.target.interpretation.value, id: synchronicity.id});
+    props.onEditSynchronicity({title: event.target.title.value, date: event.target.date.value, repeats: event.target.repeats.value, ccurence: event.target.occurence.value, interpretation: event.target.interpretation.value, id: synchronicity.id});
   }
   return (
     <React.Fragment>
