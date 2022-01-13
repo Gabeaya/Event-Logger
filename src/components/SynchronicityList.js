@@ -12,6 +12,7 @@ function SynchronicityList(props){
         whenSynchronicityClicked = { props.onSynchronicitySelection}
         title={synchronicity.title}
         date={synchronicity.date}
+        repeats={synchronicity.repeats}
         occurence={synchronicity.occurence}
         interpretation={synchronicity.interpretation}
         id={synchronicity.id}

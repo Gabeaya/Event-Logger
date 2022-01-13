@@ -13,6 +13,10 @@ function ReusableForm(props) {
           type='text'
           name='date'
           placeholder='00/00/00' />
+        <input 
+          type="number"
+          name="repeats"
+          placeholder= "how many times has this happened" />
         <textarea
           name='occurence'
           placeholder='What happened' />

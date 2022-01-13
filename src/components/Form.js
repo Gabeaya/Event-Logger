@@ -6,7 +6,7 @@ import ReusableForm from "./ReusableForm";
 function Form(props){
   function handleFormSubmission(event) {
     event.preventDefault();
-    props.onFormCreation({title: event.target.title.value, date: event.target.date.value, occurence: event.target.occurence.value, interpretation: event.target.interpretation.value, id:v4()});
+    props.onFormCreation({title: event.target.title.value, date: event.target.date.value, repeats: event.target.repeats.value, occurence: event.target.occurence.value, interpretation: event.target.interpretation.value, id:v4()});
   }
   return (
     <React.Fragment>
