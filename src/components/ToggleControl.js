@@ -67,6 +67,25 @@ class ToggleControl extends React.Component {
       editing: false,
       selectedSynchronicity: null
     });
+  }
+
+  handleIncrementingSynchronicity = (id) => {
+    if (this.state.mainSynchronicityList.length > 1) {
+      const incrementedList = this.state.mainSynchronicityList.filter(s => s.id === id)[0]
+      incrementedList.repeats ++;
+      const newMainSynchronicityList = this.state.mainSynchronicityList.filter(s => s.id !== id).concat(incrementedList);
+      this.setState({
+        mainSynchronicityList: newMainSynchronicityList
+      });
+    } else {
+      const incrementedList = this.state.mainSynchronicityList.filter(s => s.id === id)[0]
+      incrementedList.repeats ++;
+      const newMainSynchronicityList = []
+      const changedSynchronicityList = newMainSynchronicityList.concat(incrementedList);
+      this.setState({
+        mainSynchronicityList: changedSynchronicityList
+      });
+    }
     
   }
   render(){
@@ -77,7 +96,7 @@ class ToggleControl extends React.Component {
       currentlyVisibleState = <EditForm synchronicity = {this.state.selectedSynchronicity} onEditSynchronicity = {this.handleEditingSynchronicityInList} />
       buttonText= "return to list";
     } else if (this.state.selectedSynchronicity != null) {
-      currentlyVisibleState = <Detail synchronicity = {this.state.selectedSynchronicity} onClickingDelete = {this.handleDeletingSynchronicity} onClickingEdit = {this.handleEditClick} />
+      currentlyVisibleState = <Detail synchronicity = {this.state.selectedSynchronicity} onClickingDelete = {this.handleDeletingSynchronicity} onClickingEdit = {this.handleEditClick} onClickingIncrement = {this.handleIncrementingSynchronicity}/>
       buttonText = "Return to list";
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <Form onFormCreation={this.handleAddingSynchronicityToList} />;
