@@ -14,10 +14,10 @@ function ReusableForm(props) {
           name='date'
           placeholder='00/00/00' />
         <textarea
-          name='occurance'
+          name='occurence'
           placeholder='What happened' />
         <textarea
-          name='Interpretation'
+          name='interpretation'
           placeholder='What does it mean to you' />
         <button type='submit'>{props.buttonText}</button>
       </form>
