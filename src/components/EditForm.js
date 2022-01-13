@@ -7,7 +7,7 @@ function EditForm (props) {
 
   function handleEditFormSubmission(event) {
     event.preventDefault();
-    props.onEditTicket({title: event.target.title.value, date: event.target.date.value, occurance: event.target.occurance.value, interpretation: event.target.interpretation.value, id: ticket.id});
+    props.onEditSynchronicity({title: event.target.title.value, date: event.target.date.value, occurence: event.target.occurence.value, interpretation: event.target.interpretation.value, id: synchronicity.id});
   }
   return (
     <React.Fragment>
@@ -18,7 +18,7 @@ function EditForm (props) {
   );
 }
 EditForm.propTypes = {
-  synchronicity: Proptypes.object,
-  onEditTicket: PropTypes.func
-}
+  synchronicity: PropTypes.object,
+  onEditSynchronicity: PropTypes.func
+};
 export default EditForm;
