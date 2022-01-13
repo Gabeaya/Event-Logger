@@ -2,7 +2,7 @@ import React from 'react';
 import Form from './Form';
 import SynchronicityList from './SynchronicityList';
 import Detail from './Detail';
-import EditForm from '.EditForm';
+import EditForm from './EditForm';
 
 
 class ToggleControl extends React.Component {
@@ -10,8 +10,8 @@ class ToggleControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mainSynchronicityList: [],
       formVisibleOnPage: false,
+      mainSynchronicityList: [],
       selectedSynchronicity: null,
       editing: false
     };
@@ -53,17 +53,17 @@ class ToggleControl extends React.Component {
     });
   }
 
-  handeEditClick = () => {
-    console.log("handleEditClickReach!");
+  handleEditClick = () => {
+    console.log("handleEditClick Reach!");
     this.setState({editing:true});
   }
 
-  handleEditingInList = (synchronicityToEdit) => {
-    const editedMainList = this.state.mainSynchronicityList
-      .filter(synchronicity => synchronicity.id !== this.state.selectedSynchronicity)
+  handleEditingSynchronicityInList = (synchronicityToEdit) => {
+    const editedMainSynchronicityList = this.state.mainSynchronicityList
+      .filter(synchronicity => synchronicity.id !== this.state.selectedSynchronicity.id)
       .concat(synchronicityToEdit);
     this.setState({
-      mainSynchronicityList: editedMainList,
+      mainSynchronicityList: editedMainSynchronicityList,
       editing: false,
       selectedSynchronicity: null
     });
@@ -72,8 +72,9 @@ class ToggleControl extends React.Component {
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
+
     if (this.state.editing ) {
-      currentlyVisibleState = <EditForm synchronicity = {this.state.selectedSynchronicity} onEditTicket = {this.handleEditingInList} />
+      currentlyVisibleState = <EditForm synchronicity = {this.state.selectedSynchronicity} onEditSynchronicity = {this.handleEditingSynchronicityInList} />
       buttonText= "return to list";
     } else if (this.state.selectedSynchronicity != null) {
       currentlyVisibleState = <Detail synchronicity = {this.state.selectedSynchronicity} onClickingDelete = {this.handleDeletingSynchronicity} onClickingEdit = {this.handleEditClick} />
